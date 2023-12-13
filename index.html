@@ -21,24 +21,26 @@
         
         <div id="meat" >
             <h1>2. Meat</h1>
-            <div id="meat-container">
-                <div id="meat-s">
-                <select id="select-meat" name="meat" >
-                <option value="Beef Patty" selected data-price="35" data-url="/assets/pirjoala-de-vita.png">Beef Patty (35 lei)</option>
-                <option value="Breaded Chicken Filet" data-price="25" data-url="/assets/pirjoala-de-pui (2).png">Breaded Chicken Filet (25 lei)</option>
-                <option value="Grilled Chicken Filet" data-price="25" data-url="/assets/pirjoala-de-pui (2).png">Grilled Chicken Filet (25 lei)</option>
-                </select>
-                <div class="img-delete" id="delete-meat"> <img src="/assets/delete-option.png" alt=""></div>
+            <div id="meat-container" class="ing-container">
+                <div id="meat-s" >
+                    <select id="select-meat" name="meat" >
+                    <option value="Beef Patty" selected data-price="35" data-url="/assets/pirjoala-de-vita.png">Beef Patty (35 lei)</option>
+                    <option value="Breaded Chicken Filet" data-price="25" data-url="/assets/pirjoala-de-pui (2).png">Breaded Chicken Filet (25 lei)</option>
+                    <option value="Grilled Chicken Filet" data-price="25" data-url="/assets/pirjoala-de-pui (2).png">Grilled Chicken Filet (25 lei)</option>
+                    </select>
+                </div>
+                <div class="img-delete"  id="del-meat-div"> 
+                        <img src="/assets/delete-option.png" >
                 </div>
                 
-            </div>
+            </div>  
                 <div class="add-btn" id="btn-add-meat">
                     <span id="add-meat" class="s-add">+</span>
                     <span id="add-meat" class="span-add"> Add Item</span>
                 </div>
         </div>
 
-        <div id="bottom-sauce" >
+        <div id="bottom-sauce" class="ing-container">
             <h1>3. BOTTOM SAUCE</h1>
             <div id="bottom-sauce-container">
                 <div id="bottom-sauce-s">
@@ -52,8 +54,10 @@
                     <option value="Classy Sauce" data-price="4" data-url="/assets/tartar-sos.png" >Classy Sauce (4 lei)</option>
                     <option value="Garlic Sauce" data-price="4" data-url="/assets/tartar-sos.png" >Garlic Sauce (4 lei)</option>
                     </select>
-                    <div class="img-delete" id="delete-bottom"> <img src="/assets/delete-option.png" alt=""></div>
                 </div>
+                    <div class="img-delete" id="delete-bottom"> 
+                        <img src="/assets/delete-option.png" alt="">
+                    </div>
             </div>
             <div class="add-btn" id="btn-add-bottom">
                 <span id="add-bottom" class="s-add">+</span>
@@ -62,7 +66,7 @@
 
         </div>
 
-        <div id="top-sauce" >
+        <div id="top-sauce" class="ing-container" >
             <h1>4. TOP SAUCE</h1>
             <div id="top-sauce-container">
                 <div id="top-sauce-s">
@@ -76,8 +80,10 @@
                     <option value="Sriracha" data-price="6" data-url="/assets/sriracha.png" >Sriracha (spicy) (6 lei)</option>
                     <option value="Garlic Sauce"  data-price="4" data-url="/assets/tartar-sos.png">Garlic Sauce (4 lei)</option>
                     </select>
-                    <div class="img-delete" id="delete-top"> <img src="/assets/delete-option.png" alt=""></div>
                 </div>
+                    <div class="img-delete" id="delete-top">
+                         <img src="/assets/delete-option.png" alt="">
+                        </div>
             </div>
             <div class="add-btn" id="btn-add-top">
                 <span id="add-sauce" class="s-add">+</span>
@@ -85,16 +91,18 @@
             </div>
         </div>
 
-        <div id="cheese" >
+        <div id="cheese"  class="ing-container">
             <h1>5. CHEESE</h1>
             <div id="cheese-container">
                 <div id="cheese-s">
-                <select id="select-chesse" name="cheese" >
-                <option value="-" selected >-</option>
-                <option value="Chedar Cheese"  data-price="12" data-url="/assets/cheddar.png">Chedar Cheese (12 lei)</option>
-                <option value="Dorblu Cheese"  data-price="15" data-url="/assets/cascaval-dorblu.png">Dorblu Cheese (15 lei)</option>
-                </select>
-                <div class="img-delete" id="delete-cheese"> <img src="/assets/delete-option.png" alt=""></div>
+                    <select id="select-chesse" name="cheese" >
+                    <option value="-" selected >-</option>
+                    <option value="Chedar Cheese"  data-price="12" data-url="/assets/cheddar.png">Chedar Cheese (12 lei)</option>
+                    <option value="Dorblu Cheese"  data-price="15" data-url="/assets/cascaval-dorblu.png">Dorblu Cheese (15 lei)</option>
+                    </select>
+                </div>
+                <div class="img-delete" id="delete-cheese"> 
+                    <img src="/assets/delete-option.png" alt="">
                 </div>
             </div>
             <div class="add-btn" id="btn-add-cheese">
@@ -103,22 +111,24 @@
             </div>
         </div>
         
-        <div id="toppings" >
+        <div id="toppings"  class="ing-container">
             <h1>6. TOPPINGS</h1>
             <div id="toppings-containe">
                 <div id="toppings-s">
-                <select id="select-toppings" name="toppings" >
-                <option value="-" selected>-</option>
-                <option value="Crispy Bacon" data-price="12" data-url="/assets/bacon-crocant.png" >Crispy Bacon (12 lei)</option>
-                <option value="Fried Egg"  data-price="10" data-url="/assets/ou-prajit.png">Fried Egg (10 lei)</option>
-                <option value="Marinated Onion"  data-price="2" data-url="/assets/ceapa-marinata.png">Marinated Onion (2 lei)</option>
-                <option value="Caramel Onion" data-price="4" data-url="/assets/ceapa-caramelizata.png" >Caramel Onion (4 lei)</option>
-                <option value="Pickles"  data-price="4" data-url="/assets/castraveti-murati.png">Pickles (4 lei)</option>
-                <option value="Cucumber" data-price="4" data-url="/assets/castraveti-proaspeti.png " >Cucumber (4 lei)</option>
-                <option value="Tomato"  data-price="5" data-url="/assets/rosii.png">Tomato (5 lei)</option>
-                <option value="Iceberg Lettuce"  data-price="5" data-url="/assets/salata-iceberg.png">Iceberg Lettuce (5 lei)</option>
-                     </select>
-                 <div class="img-delete" id="delete-toppings"> <img src="/assets/delete-option.png" alt=""></div>
+                        <select id="select-toppings" name="toppings" >
+                        <option value="-" selected>-</option>
+                        <option value="Crispy Bacon" data-price="12" data-url="/assets/bacon-crocant.png" >Crispy Bacon (12 lei)</option>
+                        <option value="Fried Egg"  data-price="10" data-url="/assets/ou-prajit.png">Fried Egg (10 lei)</option>
+                        <option value="Marinated Onion"  data-price="2" data-url="/assets/ceapa-marinata.png">Marinated Onion (2 lei)</option>
+                        <option value="Caramel Onion" data-price="4" data-url="/assets/ceapa-caramelizata.png" >Caramel Onion (4 lei)</option>
+                        <option value="Pickles"  data-price="4" data-url="/assets/castraveti-murati.png">Pickles (4 lei)</option>
+                        <option value="Cucumber" data-price="4" data-url="/assets/castraveti-proaspeti.png " >Cucumber (4 lei)</option>
+                        <option value="Tomato"  data-price="5" data-url="/assets/rosii.png">Tomato (5 lei)</option>
+                        <option value="Iceberg Lettuce"  data-price="5" data-url="/assets/salata-iceberg.png">Iceberg Lettuce (5 lei)</option>
+                            </select>
+                    </div>  
+                 <div class="img-delete" id="delete-toppings"> 
+                    <img src="/assets/delete-option.png" alt="">
                 </div>
             </div>
                 <div class="add-btn" id="btn-add-toppings">

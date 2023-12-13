@@ -16,22 +16,40 @@ const divTopSauce = document.querySelector("#top-sauce-container");
 const divCheese = document.querySelector("#cheese-container");
 const divToppings = document.querySelector("#toppings-containe");
 
+const divDelMeat =document.querySelector("#del-meat-div")
+const divDelBottom =document.querySelector("#delete-bottom")
+const divDelTop =document.querySelector("#delete-top")
+const divDelChese =document.querySelector("#delete-cheese")
+const divDelToppings =document.querySelector("#delete-toppings")
 
-const deleteMeat = document.querySelectorAll("#delete-meat");
-const deleteBottom = document.querySelectorAll("#delete-bottom");
-const deleteTop = document.querySelectorAll("#delete-top");
-const deleteCheese = document.querySelectorAll("#delete-cheese");
-const deleteToppings = document.querySelectorAll("#delete-toppings");
+const add = (loc, ig, deleteDiv) => {
+    const cloned = ig.cloneNode(true);
+    cloned.setAttribute('data-index', loc.childElementCount);
+    // console.log(cloned.dataset.index);
+    const btnClone = deleteDiv.cloneNode(true)
+    btnClone.setAttribute('data-index', loc.childElementCount)
+    // console.log(btnClone.dataset.index);
 
-const add = (loc,ig) => {
-    loc.appendChild(ig.cloneNode(true));
-    
+    loc.appendChild(cloned);
+    loc.appendChild(btnClone);
+
+    const deleteItem = (location) => {
+        const btnCloneIndex = btnClone.dataset.index
+     const itemToDelete = location.querySelectorAll(`[data-index="${btnCloneIndex}"]`);
+     console.log(itemToDelete);
+itemToDelete.forEach(element => {
+ element.remove()
+});
+        }
+        btnClone.addEventListener("click", () => deleteItem(loc))
+
 }
 
-addMeatBtn.addEventListener("click", () =>add(divMeat,meat) );
-addBottomSauceBtn.addEventListener("click", () => add(divBottomSauce, bottomSauce));
-addTopSauceBtn.addEventListener("click", () => add(divTopSauce, topSauce));
-addCheeseBtn.addEventListener("click", () => add(divCheese, cheese));
-addToppingsBtn.addEventListener("click", () => add(divToppings, toppings));
+addMeatBtn.addEventListener("click", () => add(divMeat,meat,divDelMeat) );
+addBottomSauceBtn.addEventListener("click", () => add(divBottomSauce, bottomSauce, divDelBottom));
+addTopSauceBtn.addEventListener("click", () => add(divTopSauce, topSauce ,divDelTop));
+addCheeseBtn.addEventListener("click", () => add(divCheese, cheese ,divDelChese));
+addToppingsBtn.addEventListener("click", () => add(divToppings, toppings ,divDelToppings));
+
 
 
