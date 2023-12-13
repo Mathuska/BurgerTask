@@ -8,6 +8,7 @@ body{
     align-items: center;
 }
 #container{
+    padding-top: 200px;
     display: flex;
     }
 #create-burger{
@@ -17,16 +18,7 @@ body{
     display: flex;
     flex-direction: column;
 }
-#imag-container {
-    width: 650px;
-    display: flex;
-    flex-direction: column; 
-  }
- .img-ingredients {
-    display: flex;
-    margin-bottom: 10px;    
-    
-  }
+
 h1{
     color: #e3830e;
     margin-bottom:5px ;
@@ -40,7 +32,14 @@ select{
     color: white;
     padding-left: 40px;
     font-size: 20px;
-    margin-top: 5px;
+
+}
+option{
+    background-color: #1c1a1a;
+    color: white;
+}
+select option:checked {
+    background-color: #e3830e;
 }
 #meat-s ,#bottom-sauce-s,#cheese-s,
 #toppings-s,#top-sauce-s{
@@ -54,19 +53,18 @@ select{
 .del{
     visibility: hidden;
 }
-    
+
 .add-btn{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   margin-top: 10px;
-   margin-left: 100px;
-   width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 90px;
+    width: 120px;
 }
 .s-add {
     display: flex;
     align-items: center;
-   justify-content: center;
+    justify-content: center;
     border: 1px solid #e3830e ;
     border-radius: 50%;
     width: 25px;
@@ -74,10 +72,11 @@ select{
     margin-right:10px ;
     cursor: pointer;
     color: white;
-    }
+}
 .span-add{
     color: #e3830e;
     cursor: pointer;
+    width: 80px;
 }    
 #input-name-burger{
     width: 300px;
@@ -88,7 +87,7 @@ select{
     font-size: 15px;
     padding-left: 20px;
     margin-top: 20px;
-   }
+}
 #line{
     border-bottom-style: solid;
     border:2px solid #e3830e;
@@ -96,12 +95,36 @@ select{
 }
 #ingredients-list{
     color: white;
-    }
+}
 .total{
     margin: 1px;
 }    
+span{
+    color: white;
+    font-size: 20px;
+}
 
-
-
-
-
+#imag-conteiner {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .img-ing {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+ .img-ingredients.left{
+margin-right: 150px;
+  }
+ .img-ingredients.right{
+margin-left: 136px;
+  }
+ 
+  
+  
+  
+  
+  
