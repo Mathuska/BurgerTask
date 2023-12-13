@@ -22,9 +22,10 @@ body{
     display: flex;
     flex-direction: column; 
   }
-  img {
+ .img-ingredients {
     display: flex;
     margin-bottom: 10px;    
+    
   }
 h1{
     color: #e3830e;
@@ -37,16 +38,27 @@ select{
     border: 1px solid #e3830e ;
     background-color: transparent;
     color: white;
-    padding-left: 30px;
+    padding-left: 40px;
     font-size: 20px;
+    margin-top: 5px;
 }
-
+#meat-s ,#bottom-sauce-s,#cheese-s,
+#toppings-s,#top-sauce-s{
+    display: flex;
+    align-items: center;
+}
+.img-delete{
+    margin-left: 10px;
+    cursor: pointer;
+}
+    
 .add-btn{
    display: flex;
    align-items: center;
    justify-content: center;
    margin-top: 10px;
-   
+   margin-left: 100px;
+   width: 100px;
 }
 .s-add {
     display: flex;
@@ -79,7 +91,12 @@ select{
     border:2px solid #e3830e;
     margin-top: 50px;
 }
-
+#ingredients-list{
+    color: white;
+    }
+.total{
+    margin: 1px;
+}    
 
 
 
