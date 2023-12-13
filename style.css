@@ -1,0 +1,107 @@
+body{
+    background-color: #1c1a1a;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container{
+    display: flex;
+    }
+#create-burger{
+    width: 320px;
+    height: 900px;
+    margin-right: 250px; 
+    display: flex;
+    flex-direction: column;
+}
+#imag-container {
+    width: 650px;
+    display: flex;
+    flex-direction: column; 
+  }
+ .img-ingredients {
+    display: flex;
+    margin-bottom: 10px;    
+    
+  }
+h1{
+    color: #e3830e;
+    margin-bottom:5px ;
+    font-size: 20px;
+}
+select{
+    width: 320px;
+    height: 40px;
+    border: 1px solid #e3830e ;
+    background-color: transparent;
+    color: white;
+    padding-left: 40px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+#meat-s ,#bottom-sauce-s,#cheese-s,
+#toppings-s,#top-sauce-s{
+    display: flex;
+    align-items: center;
+}
+.img-delete {
+    margin-left: 330px;
+    cursor: pointer;
+}
+.del{
+    visibility: hidden;
+}
+    
+.add-btn{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 10px;
+   margin-left: 100px;
+   width: 100px;
+}
+.s-add {
+    display: flex;
+    align-items: center;
+   justify-content: center;
+    border: 1px solid #e3830e ;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-right:10px ;
+    cursor: pointer;
+    color: white;
+    }
+.span-add{
+    color: #e3830e;
+    cursor: pointer;
+}    
+#input-name-burger{
+    width: 300px;
+    height: 40px;
+    border: 1px solid #e3830e ;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    padding-left: 20px;
+    margin-top: 20px;
+   }
+#line{
+    border-bottom-style: solid;
+    border:2px solid #e3830e;
+    margin-top: 50px;
+}
+#ingredients-list{
+    color: white;
+    }
+.total{
+    margin: 1px;
+}    
+
+
+
+
+
