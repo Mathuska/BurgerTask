@@ -47,9 +47,12 @@ select{
     display: flex;
     align-items: center;
 }
-.img-delete{
-    margin-left: 10px;
+.img-delete {
+    margin-left: 330px;
     cursor: pointer;
+}
+.del{
+    visibility: hidden;
 }
     
 .add-btn{
@@ -97,10 +100,7 @@ select{
 .total{
     margin: 1px;
 }    
-.img-delete{
-    margin-left: 330px;
-    
-}
+
 
 
 

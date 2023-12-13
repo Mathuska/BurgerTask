@@ -22,25 +22,42 @@ const divDelTop =document.querySelector("#delete-top")
 const divDelChese =document.querySelector("#delete-cheese")
 const divDelToppings =document.querySelector("#delete-toppings")
 
+//functia de a adauga inca un select
 const add = (loc, ig, deleteDiv) => {
+   
     const cloned = ig.cloneNode(true);
     cloned.setAttribute('data-index', loc.childElementCount);
-    // console.log(cloned.dataset.index);
+    
     const btnClone = deleteDiv.cloneNode(true)
     btnClone.setAttribute('data-index', loc.childElementCount)
-    // console.log(btnClone.dataset.index);
 
     loc.appendChild(cloned);
     loc.appendChild(btnClone);
 
+//Conditia ca daca mai apare un select sa apara butonul care sa ne permita sa stergem unul din selecturi   
+ const all = loc.querySelectorAll(".img-delete")
+    if (all.length > 1) {  
+        console.log(all);
+        all.forEach((item) => item.classList.remove("del"))
+}
+
+//Functia pentru a strge un slect
     const deleteItem = (location) => {
         const btnCloneIndex = btnClone.dataset.index
-     const itemToDelete = location.querySelectorAll(`[data-index="${btnCloneIndex}"]`);
-     console.log(itemToDelete);
-itemToDelete.forEach(element => {
- element.remove()
-});
+        const itemToDelete = location.querySelectorAll(`[data-index="${btnCloneIndex}"]`);
+    
+     itemToDelete.forEach(element => {
+         element.remove()
+        });
+        
+//Conditia ca daca este numai un select sa dispara butonul de stergere
+        const all = loc.querySelectorAll(".img-delete")
+        if (all.length === 1) {
+            all[0].classList.add("del");
         }
+        
+        }
+
         btnClone.addEventListener("click", () => deleteItem(loc))
 
 }
