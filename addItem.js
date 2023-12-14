@@ -37,7 +37,7 @@ const add = (loc, ig, deleteDiv) => {
 //Conditia ca daca mai apare un select sa apara butonul care sa ne permita sa stergem unul din selecturi   
  const all = loc.querySelectorAll(".img-delete")
     if (all.length > 1) {  
-        console.log(all);
+        
         all.forEach((item) => item.classList.remove("del"))
 }
 
