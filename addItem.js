@@ -14,7 +14,7 @@ const divMeat = document.querySelector("#meat-container");
 const divBottomSauce = document.querySelector("#bottom-sauce-container");
 const divTopSauce = document.querySelector("#top-sauce-container");
 const divCheese = document.querySelector("#cheese-container");
-const divToppings = document.querySelector("#toppings-containe");
+const divToppings = document.querySelector("#toppings-container");
 
 const divDelMeat =document.querySelector("#del-meat-div")
 const divDelBottom =document.querySelector("#delete-bottom")
@@ -27,9 +27,11 @@ const add = (loc, ig, deleteDiv) => {
    
     const cloned = ig.cloneNode(true);
     cloned.setAttribute('data-index', loc.childElementCount);
-    
+    cloned.classList.add(`${ig.classList}`)
+
     const btnClone = deleteDiv.cloneNode(true)
     btnClone.setAttribute('data-index', loc.childElementCount)
+    btnClone.classList.add(`${ig.classList}`)
 
     loc.appendChild(cloned);
     loc.appendChild(btnClone);
@@ -67,6 +69,3 @@ addBottomSauceBtn.addEventListener("click", () => add(divBottomSauce, bottomSauc
 addTopSauceBtn.addEventListener("click", () => add(divTopSauce, topSauce ,divDelTop));
 addCheeseBtn.addEventListener("click", () => add(divCheese, cheese ,divDelChese));
 addToppingsBtn.addEventListener("click", () => add(divToppings, toppings ,divDelToppings));
-
-
-

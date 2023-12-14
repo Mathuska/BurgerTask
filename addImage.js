@@ -10,22 +10,29 @@ const topSelect = document.querySelector("#select-top-sauce");
 const cheeseSelect = document.querySelector("#select-chesse");
 const toppingsSelect = document.querySelector("#select-toppings");
 
-// const meatSelectAll = document.querySelectorAll("#select-meat");
-// const bottomSelectAll = document.querySelectorAll("#select-bottom-sauce");
-// const topSelectAll = document.querySelectorAll("#select-top-sauce");
-// const cheeseSelectAll = document.querySelectorAll("#select-chesse");
-// const toppingsSelectAll = document.querySelectorAll("#select-toppings");
+const meatContainer  = document.querySelector("#meat-container");
+const bottomContainer = document.querySelector("#bottom-sauce-container");
+const topContainer  = document.querySelector("#top-sauce-container");
+const cheeseContainer = document.querySelector("#cheese-container");
+const toppingsContainer = document.querySelector("#toppings-container")
+ 
+let meatSelectAll = document.querySelectorAll(".m-s");
+let bottomSelectAll = document.querySelectorAll(".b-s-s");
+let topSelectAll = document.querySelectorAll(".t-s-s");
+let cheeseSelectAll = document.querySelectorAll(".c-s");
+let toppingsSelectAll = document.querySelectorAll(".t-s");
+    
 
 
-const meatContainer = document.querySelector("#img-meat-container");
-const bottomContainer = document.querySelector("#img-bottom-container");
-const topContainer = document.querySelector("#img-top-container");
-const cheeseContainer = document.querySelector("#img-cheese-container");
-const toppingsContainer = document.querySelector("#img-toppings-container");
+const meatImgContainer = document.querySelector("#img-meat-container");
+const bottomImgContainer = document.querySelector("#img-bottom-container");
+const topImgContainer = document.querySelector("#img-top-container");
+const cheeseImgContainer = document.querySelector("#img-cheese-container");
+const toppingsImgContainer = document.querySelector("#img-toppings-container");
 
 
-const addImage = (loc, option ) => {
-   
+const addImage = (loc, option, childrensContainer , allSelects ) => {
+
 loc.innerHTML = `
     <div class="img-ing">
         <img src="${option.dataset.url}" alt="" class="img-ingredients right">
@@ -36,41 +43,42 @@ loc.innerHTML = `
     </div>
     `;
     
+    
+     const childrens = childrensContainer.children
+    for (let i = 0; i < childrens.length ; i++) {
+        if (i % 2 === 0 || i === 0 ) {
+            allSelects = childrens[i]
+        let opt = allSelects.querySelector("option:checked");
+        console.log(opt);
+        }  
+}
+
 
 }
-// const selectContainers = [meatContainer, bottomContainer, topContainer, cheeseContainer, toppingsContainer];
-// const selectOptions = [meatSelect, bottomSelect, topSelect, cheeseSelect, toppingsSelect];
 
-// selectOptions.forEach((select, index) => {
-//   select.addEventListener("change", () => {
-//     const option = select.querySelector("option:checked");
-//     const options = document.querySelectorAll(`#${select.id} option:checked`);
-
-//     addImage(selectContainers[index], option, options);
-//   });
-// });
+   
 
 meatSelect.addEventListener("change", () => {
     const meatOption = meatSelect.querySelector("option:checked");
-    addImage(meatContainer, meatOption);
-});
+    addImage(meatImgContainer, meatOption , meatContainer, meatSelectAll);
+}); 
 
 bottomSelect.addEventListener("change", () => {
     const bottomSauceOption = bottomSelect.querySelector("option:checked");
-    addImage(bottomContainer, bottomSauceOption);
+    addImage(bottomImgContainer, bottomSauceOption , bottomContainer , bottomSelectAll);
 });
 
 topSelect.addEventListener("change", () => {
     const topSauceOption = topSelect.querySelector("option:checked");
-    addImage(topContainer, topSauceOption);
+    addImage(topImgContainer, topSauceOption , topContainer , topSelectAll);
 });
 
 cheeseSelect.addEventListener("change", () => {
     const cheeseOption = cheeseSelect.querySelector("option:checked");
-    addImage(cheeseContainer, cheeseOption);
+    addImage(cheeseImgContainer, cheeseOption , cheeseContainer , cheeseSelectAll);
 });
 
 toppingsSelect.addEventListener("change", () => {
     const toppingsOption = toppingsSelect.querySelector("option:checked");
-    addImage(toppingsContainer, toppingsOption);
+    addImage(toppingsImgContainer, toppingsOption, toppingsContainer , toppingsSelectAll);
 });
