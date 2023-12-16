@@ -22,11 +22,12 @@ const divDelTop =document.querySelector("#delete-top")
 const divDelChese =document.querySelector("#delete-cheese")
 const divDelToppings =document.querySelector("#delete-toppings")
 
-//functia de a adauga inca un select
+
 const add = (loc, ig, deleteDiv) => {
    
     const cloned = ig.cloneNode(true);
     cloned.setAttribute('data-index', loc.childElementCount);
+    cloned.setAttribute('data-tr', "false");
     cloned.classList.add(`${ig.classList}`)
 
     const btnClone = deleteDiv.cloneNode(true)
@@ -36,35 +37,36 @@ const add = (loc, ig, deleteDiv) => {
     loc.appendChild(cloned);
     loc.appendChild(btnClone);
 
-//Conditia ca daca mai apare un select sa apara butonul care sa ne permita sa stergem unul din selecturi   
+ 
  const all = loc.querySelectorAll(".img-delete")
     if (all.length > 1) {  
         
         all.forEach((item) => item.classList.remove("del"))
 }
 
-//Functia pentru a strge un slect
+
     const deleteItem = (location) => {
-        const btnCloneIndex = btnClone.dataset.index
-        const itemToDelete = location.querySelectorAll(`[data-index="${btnCloneIndex}"]`);
-    
-     itemToDelete.forEach(element => {
+ const itemToDelete = location.querySelectorAll(`[data-index="${btnClone.dataset.index}"]`);
+    itemToDelete.forEach(element => {
          element.remove()
         });
         
-//Conditia ca daca este numai un select sa dispara butonul de stergere
         const all = loc.querySelectorAll(".img-delete")
         if (all.length === 1) {
             all[0].classList.add("del");
         }
-        
-        }
-
-        btnClone.addEventListener("click", () => deleteItem(loc))
+    }
+   btnClone.addEventListener("click", () => deleteItem(loc))
 
 }
 
-addMeatBtn.addEventListener("click", () => add(divMeat,meat,divDelMeat) );
+// const  lastImg = document.querySelector("#img-meat-container").lastElementChild;
+//     console.log(lastImg);
+//        divDelMeat.addEventListener("click" , () => lastImg.remove())
+
+
+
+addMeatBtn.addEventListener("click", () => add(divMeat,meat,divDelMeat));
 addBottomSauceBtn.addEventListener("click", () => add(divBottomSauce, bottomSauce, divDelBottom));
 addTopSauceBtn.addEventListener("click", () => add(divTopSauce, topSauce ,divDelTop));
 addCheeseBtn.addEventListener("click", () => add(divCheese, cheese ,divDelChese));
